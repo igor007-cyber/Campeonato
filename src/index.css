@@ -1,29 +1,33 @@
-:root {
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color-scheme: light dark;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700&family=Poppins:wght@500;600;700&display=swap');
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  background: var(--color-background, #0b1221);
-  color: var(--color-text, #f8fafc);
-}
+@layer base {
+  *,
+  *::before,
+  *::after {
+    @apply box-border;
+  }
 
-a {
-  color: inherit;
-}
+  html {
+    @apply scroll-smooth;
+  }
 
-img {
-  max-width: 100%;
-  display: block;
+  body {
+    @apply m-0 min-h-screen bg-surface-light text-ink transition-colors duration-300 ease-out antialiased font-sans;
+  }
+
+  .dark body {
+    @apply bg-brand-secondary text-ink-light;
+  }
+
+  a {
+    @apply no-underline text-inherit;
+  }
+
+  img {
+    @apply max-w-full;
+  }
 }
